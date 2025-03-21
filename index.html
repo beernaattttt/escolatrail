@@ -391,8 +391,6 @@
     padding: 120px 10% 100px;
     text-align: center;
   }
-
-    
 .icona-correu-wrapper {
   position: fixed;
   bottom: 20px;
@@ -403,18 +401,15 @@
   gap: 10px;
 }
 
-.icona-correu {
-  background-color: var(--accent);
-  color: #001f3f;
-  font-size: 24px;
-  padding: 15px;
+.icona-correu img {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  text-decoration: none;
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
   transition: transform 0.2s ease;
 }
 
-.icona-correu:hover {
+.icona-correu img:hover {
   transform: scale(1.1);
 }
 
@@ -439,6 +434,7 @@
     display: none;
   }
 }
+
     footer {
       background-color: var(--dark-blue);
       color: var(--white);
@@ -620,10 +616,11 @@
 </section>
 <div class="icona-correu-wrapper" id="icona-correu-wrapper">
   <a href="mailto:info@escolatrail.com" class="icona-correu" title="Envia'ns un correu">
-    📧
+    <img src="resources/icons/charla.png" alt="Icona de correu">
   </a>
   <span class="tancar-correu" onclick="tancarIconaCorreu()">✖</span>
 </div>
+
 
 
 
