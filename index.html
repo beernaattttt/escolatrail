@@ -29,6 +29,7 @@
       line-height: 1.6;
     }
 /* General Navbar Styling */
+/* NAV GENERAL */
 nav {
   background-color: var(--dark-blue);
   display: flex;
@@ -40,48 +41,38 @@ nav {
   z-index: 1000;
 }
 
-.logo img {
-  height: 50px; /* Smaller logo */
-  width: auto;
-}
-
-/* Navigation Menu */
+/* ESTILS DEL MENÚ */
 .menu {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-/* Navigation Buttons */
-.nav-btn {
-  background: transparent;
-  border: none;
-  color: var(--white);
+/* ESTIL DELS ELEMENTS DEL MENÚ */
+.menu-item {
+  position: relative;
   font-size: 1rem;
   font-weight: bold;
-  padding: 10px 15px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  border-radius: 5px;
+  color: var(--white);
+  text-decoration: none; /* Evita subratllats */
+  padding: 10px 0;
+  transition: color 0.3s ease;
 }
 
-/* Hover Animation */
-.nav-btn:hover {
-  background: var(--light-blue);
-  color: var(--dark-blue);
-  transform: scale(1.1);
+/* CREACIÓ DE LA RATLLA AMB `::after` */
+.menu-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* Inicialment invisible */
+  height: 3px; /* Gruix de la línia */
+  background: var(--light-blue); /* Color de la línia */
+  transition: width 0.3s ease-in-out; /* Animació */
 }
 
-/* Toggle Button (Hidden on Large Screens) */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.nav-toggle img {
-  width: 30px;
-  height: auto;
+/* ANIMACIÓ: La línia es desplega quan passem el cursor */
+.menu-item:hover::after {
+  width: 100%; /* Fa que s'estengui completament */
 }
 
 /* RESPONSIVE: Vertical Navigation for Mobile */
