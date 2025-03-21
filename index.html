@@ -445,50 +445,54 @@
     display: none;
   }
 }
-    footer {
-      background-color: var(--dark-blue);
-      color: var(--white);
-      text-align: center;
-    }
+  /* Peu de pàgina – Footer estilitzat i adaptat */
+.site-footer {
+  width: 100%;
+  background: #10182F;
+  padding: 60px 20px;
+}
 
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: auto;
-      flex-wrap: wrap;
-      text-align: left;
-    }
+.site-footer .footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
 
-    .footer-links {
-      flex: 1;
-      min-width: 250px;
-      margin-bottom: 1rem;
-    }
+.site-footer .footer-col h4 {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
 
-    .footer-links h3 {
-      color: #002855;
-      margin-bottom: 1rem;
-    }
+.site-footer .footer-col .links {
+  list-style: none;
+}
 
-    .footer-links ul {
-      list-style: none;
-      padding: 0;
-    }
+.site-footer .footer-col .links li {
+  margin-bottom: 10px;
+}
 
-    .footer-links ul li {
-      margin: 5px 0;
-    }
+.site-footer .footer-col .links li a {
+  text-decoration: none;
+  color: #bfbfbf;
+  transition: color 0.3s;
+}
 
-    .footer-links a {
-      color: var(--white);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
+.site-footer .footer-col .links li a:hover {
+  color: #ffffff;
+}
 
-    .footer-links a:hover {
-      color: #002855;
-    }
+@media (max-width: 768px) {
+  .site-footer .footer-row {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -634,31 +638,44 @@
   </a>
   <span class="tancar-correu" onclick="tancarIconaCorreu()">✖</span>
 </div>
+<section class="site-footer">
+  <div class="footer-row">
+ <div class="footer-col">
+          <h4>Informació</h4>
+          <ul class="links">
+            <li><a href="#">Sobre nosaltres</a></li>
+            <li><a href="#">Compressió</a></li>
+            <li><a href="#">Clients</a></li>
+            <li><a href="#">Servei</a></li>
+            <li><a href="#">Col·lecció</a></li>
+          </ul>
+        </div>
 
+        <div class="footer-col">
+          <h4>Explora</h4>
+          <ul class="links">
+            <li><a href="#">Dissenys gratuïts</a></li>
+            <li><a href="#">Últims dissenys</a></li>
+            <li><a href="#">Temes</a></li>
+            <li><a href="#">Dissenys populars</a></li>
+            <li><a href="#">Habilitats artístiques</a></li>
+            <li><a href="#">Noves pujades</a></li>
+          </ul>
+        </div>
 
-
-
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/apply">Applications</a></li>
-          <li><a href="/events">Past Events</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h3>Contact</h3>
-        <ul>
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>
-    </div>
-    <p>&copy; 2025 Escola Trail Barcelona. Tots els drets reservats.</p>
-  </footer>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul class="links">
+            <li><a href="#">Acord amb el client</a></li>
+            <li><a href="#">Política de privacitat</a></li>
+            <li><a href="#">RGPD</a></li>
+            <li><a href="#">Seguretat</a></li>
+            <li><a href="#">Testimonis</a></li>
+            <li><a href="#">Kit de premsa</a></li>
+          </ul>
+        </div>  </div>
+</section>
+ 
   <script>
   const wrapper = document.getElementById('icona-correu-wrapper');
 
