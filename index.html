@@ -28,7 +28,7 @@
       color: var(--text-color);
       line-height: 1.6;
     }
-/* Estils generals del menú */
+/* Default navigation bar */
 nav {
   background-color: var(--dark-blue);
   display: flex;
@@ -39,41 +39,33 @@ nav {
   top: 0;
   z-index: 1000;
 }
-    /* Ajust de mida del logo */
-nav .logo img {
-  max-height: 50px; /* Evita que sigui massa gran */
-  width: auto; /* Manté la proporció */
-  transition: transform 0.3s ease-in-out;
+
+/* Navigation menu (default horizontal for large screens) */
+.menu {
+  display: flex;
+  gap: 2rem;
 }
 
-/* Reducció en mòbils */
-@media (max-width: 768px) {
-  nav .logo img {
-    max-height: 40px; /* Redueix més en pantalles petites */
-  }
-}
-
-
-/* Default: Hide the burger menu on large screens */
-.burger-menu {
+/* Custom toggle button */
+.nav-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 2rem;
-  color: var(--white);
   cursor: pointer;
 }
 
-/* Show the burger menu only on small screens */
+.nav-toggle img {
+  width: 30px; /* Adjust size of the icon */
+  height: auto;
+}
+
+/* RESPONSIVE: Vertical navigation for mobile */
 @media (max-width: 768px) {
-  .burger-menu {
-    display: block; /* Makes the button visible */
-    position: absolute;
-    top: 15px;
-    right: 20px;
+  .nav-toggle {
+    display: block; /* Show the toggle button */
   }
 
-  /* Hide the default horizontal menu */
+  /* Hide the menu by default on small screens */
   .menu {
     display: none;
     flex-direction: column;
@@ -81,15 +73,21 @@ nav .logo img {
     background: var(--dark-blue);
     position: absolute;
     top: 60px;
-    right: 5%;
-    width: 200px;
-    padding: 10px;
-    border-radius: 5px;
+    left: 0;
+    width: 100%;
+    padding: 15px;
   }
 
   /* Show the menu when active */
   .menu.active {
     display: flex;
+  }
+
+  /* Style links for vertical menu */
+  .menu a {
+    display: block;
+    padding: 10px;
+    text-align: center;
   }
 }
 
@@ -513,29 +511,14 @@ nav .logo img {
   </style>
 </head>
 <body>
- <nav>
-  <div class="logo">
-    <img src="resources/main_logo.png" alt="Escola Trail BCN Logo">
-  </div>
-  
-  <!-- Botó del menú hamburguesa -->
-  <button class="burger-menu" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </button>
-  
-  <div class="menu">
-    <a href="#">Inici</a>
-    <a href="#">Qui som</a>
-    <a href="#">Serveis</a>
-    <a href="#">Contacte</a>
-  </div>
+<nav>
   <div class="logo">
     <img src="resources/main_logo.png" alt="Logo">
   </div>
 
-  <!-- Burger menu button -->
-  <button class="burger-menu" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i> <!-- FontAwesome icon -->
+  <!-- Toggle button with custom icon -->
+  <button class="nav-toggle" onclick="toggleMenu()">
+    <img src="resources/interfaz.png" alt="Menu">
   </button>
 
   <div class="menu">
@@ -545,6 +528,7 @@ nav .logo img {
     <a href="#">Contacte</a>
   </div>
 </nav>
+
 
 
 <section class="header-section">
