@@ -701,47 +701,41 @@ nav {
 </section>
 
  
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const wrapper = document.getElementById('icona-correu-wrapper');
-
-    if (!wrapper) {
-      console.error("⚠️ No s'ha trobat l'element #icona-correu-wrapper.");
-      return;
-    }
-
-    // Obtén la data de caducitat guardada
-    const expires = localStorage.getItem('correuAmagatExpires');
-    const now = Date.now();
-
-    // Si l'element ja està amagat i NO ha expirat, no fem res
-    if (localStorage.getItem('correuAmagat') === 'true' && expires && now < parseInt(expires)) {
-      wrapper.style.display = 'none';
-      console.log("📩 Icona correu amagada fins que expiri el temps guardat.");
-    } else {
-      // Si ja ha expirat, eliminem la informació guardada i tornem a mostrar l'element
-      localStorage.removeItem('correuAmagat');
-      localStorage.removeItem('correuAmagatExpires');
-      wrapper.style.display = 'flex';
-      console.log("📩 Icona correu visible de nou!");
-    }
-  });
-
-  function tancarIconaCorreu() {
-    const wrapper = document.getElementById('icona-correu-wrapper');
-
-    if (!wrapper) return;
-
-    wrapper.style.display = 'none';
-
-    // Guarda la data actual + 2 dies
-    const expiracio = Date.now() + 2 * 24 * 60 * 60 * 1000;
-    localStorage.setItem('correuAmagat', 'true');
-    localStorage.setItem('correuAmagatExpires', expiracio);
-
-    console.log("📩 Icona correu tancada. Es tornarà a mostrar després de 2 dies.");
+// Array de testimonis
+const testimonis = [
+  {
+    text: `"L'Escola Trail ha canviat la manera com entén l'esport el meu fill. Ara surt a córrer amb il·lusió i responsabilitat."`,
+    autor: "— Marta, mare d'en Pol (11 anys)"
+  },
+  {
+    text: `"Un espai increïble per aprendre i gaudir de la natura. El meu fill ha millorat molt físicament i mentalment."`,
+    autor: "— Jordi, pare d'en Marc (9 anys)"
+  },
+  {
+    text: `"Mai havia vist el meu fill tan motivat per fer esport! Gràcies a Escola Trail ha trobat la seva passió."`,
+    autor: "— Laura, mare d'en Guillem (12 anys)"
   }
-</script>
+];
+
+let indexActual = 0; // Índex del testimoni actual
+
+// Funció per canviar el testimoni
+function canviaTestimoni(direccio) {
+  indexActual += direccio;
+
+  // Assegura que l'índex no surti dels límits
+  if (indexActual < 0) {
+    indexActual = testimonis.length - 1; // Si és el primer, passa a l'últim
+  } else if (indexActual >= testimonis.length) {
+    indexActual = 0; // Si és l'últim, torna al primer
+  }
+
+  // Actualitza el contingut del testimoni
+  document.getElementById("testimoniActiu").innerHTML = `
+    <p>${testimonis[indexActual].text}</p>
+    <h4>${testimonis[indexActual].autor}</h4>
+  `;
+}
 
 
 </body>
