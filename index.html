@@ -39,6 +39,20 @@ nav {
   top: 0;
   z-index: 1000;
 }
+    /* Ajust de mida del logo */
+nav .logo img {
+  max-height: 50px; /* Evita que sigui massa gran */
+  width: auto; /* Manté la proporció */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Reducció en mòbils */
+@media (max-width: 768px) {
+  nav .logo img {
+    max-height: 40px; /* Redueix més en pantalles petites */
+  }
+}
+
 
 /* Amaguem el botó del menú en pantalles grans */
 .burger-menu {
