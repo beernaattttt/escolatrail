@@ -30,6 +30,7 @@
     }
 /* General Navbar Styling */
 /* NAV GENERAL */
+/* Estil del Navbar */
 nav {
   background-color: var(--dark-blue);
   display: flex;
@@ -41,71 +42,34 @@ nav {
   z-index: 1000;
 }
 
-/* ESTILS DEL MENÚ */
+/* Contenidor del menú */
 .menu {
   display: flex;
-  gap: 2rem;
+  position: relative; /* Necessari per al posicionament de l’indicador */
 }
 
-/* ESTIL DELS ELEMENTS DEL MENÚ */
+/* Estil dels ítems del menú */
 .menu-item {
   position: relative;
   font-size: 1rem;
   font-weight: bold;
   color: var(--white);
-  text-decoration: none; /* Evita subratllats */
-  padding: 10px 0;
+  text-decoration: none;
+  padding: 10px 15px;
+  cursor: pointer;
   transition: color 0.3s ease;
 }
 
-/* CREACIÓ DE LA RATLLA AMB `::after` */
-.menu-item::after {
-  content: "";
+/* Indicador animat (rectangle que es mou) */
+.nav-indicator {
   position: absolute;
-  left: 0;
   bottom: 0;
-  width: 0; /* Inicialment invisible */
-  height: 3px; /* Gruix de la línia */
-  background: var(--light-blue); /* Color de la línia */
-  transition: width 0.3s ease-in-out; /* Animació */
-}
-
-/* ANIMACIÓ: La línia es desplega quan passem el cursor */
-.menu-item:hover::after {
-  width: 100%; /* Fa que s'estengui completament */
-}
-
-/* RESPONSIVE: Vertical Navigation for Mobile */
-@media (max-width: 768px) {
-  .nav-toggle {
-    display: block;
-  }
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    background: var(--dark-blue);
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .nav-btn {
-    width: 100%;
-    text-align: center;
-    padding: 12px 0;
-  }
-
-  .nav-btn:hover {
-    background: var(--light-blue);
-  }
+  left: 0;
+  width: 60px; /* Mida inicial, s'actualitza amb JS */
+  height: 5px;
+  background: var(--light-blue);
+  transition: all 0.3s ease-in-out;
+  border-radius: 3px;
 }
 
 .header-section {
@@ -532,23 +496,7 @@ nav {
   </style>
 </head>
 <body>
-<nav>
-  <div class="logo">
-    <img src="resources/main_logo.png" alt="Logo">
-  </div>
 
-  <!-- Toggle button with custom icon -->
-  <button class="nav-toggle" onclick="toggleMenu()">
-    <img src="resources/interfaz.png" alt="Menu">
-  </button>
-
-  <div class="menu">
-    <button class="nav-btn">Inici</button>
-    <button class="nav-btn">Qui som</button>
-    <button class="nav-btn">Serveis</button>
-    <button class="nav-btn">Contacte</button>
-  </div>
-</nav>
 
 
 
@@ -563,6 +511,20 @@ nav {
     <img src="resources/runner.png" alt="Runner" class="header-image">
   </div>
 </section>
+<nav>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+
+  <div class="menu">
+    <span class="menu-item active" onclick="moveIndicator(this)">Inici</span>
+    <span class="menu-item" onclick="moveIndicator(this)">Qui som</span>
+    <span class="menu-item" onclick="moveIndicator(this)">Serveis</span>
+    <span class="menu-item" onclick="moveIndicator(this)">Contacte</span>
+    <!-- Indicador -->
+    <div class="nav-indicator"></div>
+  </div>
+</nav>
 
   <section id="qui-som" class="qui-som-section">
   <div class="qui-som-container">
