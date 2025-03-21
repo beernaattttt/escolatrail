@@ -78,7 +78,7 @@
     }
 
 .header-section {
-  background: #79b6c9;
+  background: #002855;
   color: white;
   padding: 80px 10%;
   display: flex;
@@ -113,21 +113,22 @@
 
 .circle-background {
   position: absolute;
-  width: 300px; /* Fixed circle size */
-  height: 300px; /* Keep height and width equal for a circle */
-  background: radial-gradient(circle, rgba(0, 102, 255, 1) 40%, rgba(0, 51, 153, 0.8) 80%);
-  border-radius: 50%; /* Ensures a perfect circle */
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 40%, rgba(255, 255, 255, 0.3) 80%);
+  border-radius: 50%;
+  filter: blur(50px); /* Soft white blur */
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.5); /* Glowing white effect */
   z-index: 1;
 }
 
 .header-image {
   position: relative;
   z-index: 2;
-  width: 700px; /* Adjust runner size */
+  width: 750px;
   height: auto;
   object-fit: contain;
 }
-
 
 .qui-som-section {
   background: linear-gradient(135deg, #f4f6f9, #e8f0ff);
