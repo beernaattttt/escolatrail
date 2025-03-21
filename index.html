@@ -77,54 +77,57 @@
       width: 100%;
     }
 
-    header {
-      background: linear-gradient(135deg, var(--dark-blue), var(--primary));
-      color: var(--white);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 120px 10%;
-      text-align: left;
-      position: relative;
-      overflow: hidden;
-    }
+  .header-section {
+  background: #002855;
+  color: white;
+  padding: 80px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
 
-    .header-content {
-      max-width: 50%;
-    }
+.header-text {
+  flex: 1;
+}
 
-    .header-content h1 {
-      font-size: 4.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      line-height: 1.1;
-      letter-spacing: 3px;
-    }
+.header-text h1 {
+  font-size: 4rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-    .header-content p {
-      font-size: 1.5rem;
-      margin-top: 1rem;
-    }
+.header-text p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
 
-    .header-image {
-      background: radial-gradient(circle, var(--light-blue) 30%, transparent 70%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      padding: 60px;
-      box-shadow: 0 0 40px rgba(0, 115, 230, 0.6);
-    }
+.header-image-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .header-image img {
-      max-width: 400px;
-      height: auto;
-      transition: transform 0.3s ease-in-out;
-    }
+.ellipse-background {
+  position: absolute;
+  width: 400px; /* Keep ellipse size fixed */
+  height: 250px;
+  background: radial-gradient(circle, rgba(0, 102, 255, 1) 40%, rgba(0, 51, 153, 0.8) 80%);
+  border-radius: 50%;
+  z-index: 1;
+}
 
-    .header-image img:hover {
-      transform: scale(1.05);
-    }
+.header-image {
+  position: relative;
+  z-index: 2;
+  width: auto;
+  height: 300px; /* Adjust to match ellipse */
+  object-fit: contain;
+}
+
 .qui-som-section {
   background: linear-gradient(135deg, #f4f6f9, #e8f0ff);
   color: #001f3f;
@@ -500,15 +503,17 @@
     </div>
   </nav>
 
-  <header id="inici">
-    <div class="header-content">
-      <h1>CORRE.<br>VIU.<br>GAUDEIX.</h1>
-      <p>Domina la muntanya. Supera els teus límits. Sigues llegenda.</p>
-    </div>
-    <div class="header-image">
-      <img src="resources/runner.png" alt="Trail Runner">
-    </div>
-  </header>
+<section class="header-section">
+  <div class="header-text">
+    <h1>CORRE. VIU. GAUDEIX.</h1>
+    <p>Domina la muntanya. Supera els teus límits. Sigues llegenda.</p>
+  </div>
+  <div class="header-image-container">
+    <div class="ellipse-background"></div>
+    <img src="resources/images/runner.png" alt="Runner" class="header-image">
+  </div>
+</section>
+
   <section id="qui-som" class="qui-som-section">
   <div class="qui-som-container">
     <div class="qui-som-text animate-slide">
