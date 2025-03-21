@@ -31,6 +31,7 @@
 /* General Navbar Styling */
 /* NAV GENERAL */
 /* Estil del Navbar */
+/* Estil general del Navbar */
 nav {
   background-color: var(--dark-blue);
   display: flex;
@@ -42,10 +43,17 @@ nav {
   z-index: 1000;
 }
 
+/* 🏆 Fixa la mida del logo perquè sigui molt més petit */
+.logo img {
+  max-height: 40px; /* Ajusta la mida del logo */
+  width: auto;
+}
+
 /* Contenidor del menú */
 .menu {
   display: flex;
-  position: relative; /* Necessari per al posicionament de l’indicador */
+  position: relative;
+  gap: 2rem;
 }
 
 /* Estil dels ítems del menú */
@@ -60,17 +68,25 @@ nav {
   transition: color 0.3s ease;
 }
 
-/* Indicador animat (rectangle que es mou) */
-.nav-indicator {
+/* 🔥 La línia invisible per defecte */
+.menu-item::after {
+  content: "";
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px; /* Mida inicial, s'actualitza amb JS */
-  height: 5px;
+  left: 50%;
+  bottom: -5px;
+  width: 0;
+  height: 3px;
   background: var(--light-blue);
   transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
   border-radius: 3px;
 }
+
+/* ✨ Animació en hover */
+.menu-item:hover::after {
+  width: 100%; /* Expandeix la línia sota el text */
+}
+
 
 .header-section {
   background: #002855;
@@ -500,18 +516,17 @@ nav {
 
 <nav>
   <div class="logo">
-    <img src="resources/main_logo.png" alt="Logo">
+    <img src="logo.png" alt="Logo">
   </div>
 
   <div class="menu">
-    <span class="menu-item active" onclick="moveIndicator(this)">Inici</span>
-    <span class="menu-item" onclick="moveIndicator(this)">Qui som</span>
-    <span class="menu-item" onclick="moveIndicator(this)">Serveis</span>
-    <span class="menu-item" onclick="moveIndicator(this)">Contacte</span>
-    <!-- Indicador -->
-    <div class="nav-indicator"></div>
+    <span class="menu-item">Inici</span>
+    <span class="menu-item">Qui som</span>
+    <span class="menu-item">Serveis</span>
+    <span class="menu-item">Contacte</span>
   </div>
 </nav>
+
 
 
 <section class="header-section">
@@ -710,31 +725,6 @@ nav {
     wrapper.style.display = 'flex';
   }
 </script>
-<script>
-  function moveIndicator(element) {
-    const indicator = document.querySelector('.nav-indicator');
-    const menu = document.querySelector('.menu');
-    
-    // Obté la posició de l'element clicat
-    const offsetLeft = element.offsetLeft;
-    const width = element.offsetWidth;
-
-    // Aplica el moviment a l’indicador
-    indicator.style.width = `${width}px`;
-    indicator.style.left = `${offsetLeft}px`;
-
-    // Marca l’element actiu
-    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
-    element.classList.add('active');
-  }
-
-  // Moure l’indicador al primer element per defecte
-  document.addEventListener("DOMContentLoaded", function () {
-    const activeElement = document.querySelector(".menu-item.active");
-    if (activeElement) moveIndicator(activeElement);
-  });
-</script>
-
 
 </body>
 </html>
