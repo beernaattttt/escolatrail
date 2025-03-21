@@ -321,18 +321,17 @@ nav {
 .serveis-header {
   text-align: center;
   margin-bottom: 60px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+
 }
 
 .serveis-header h2 {
-  font-size: 3rem;
   color: #0056b3;
   margin-bottom: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+ font-size: clamp(16px, 4vw, 24px); /* Ajusta automàticament la mida del text */
+  white-space: nowrap; /* Evita salts de línia */
+  overflow: hidden; /* Evita desbordaments */
 }
 
 .serveis-header p {
