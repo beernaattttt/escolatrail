@@ -498,7 +498,20 @@ nav {
 <body>
 
 
+<nav>
+  <div class="logo">
+    <img src="resources/main_logo.png" alt="Logo">
+  </div>
 
+  <div class="menu">
+    <span class="menu-item active" onclick="moveIndicator(this)">Inici</span>
+    <span class="menu-item" onclick="moveIndicator(this)">Qui som</span>
+    <span class="menu-item" onclick="moveIndicator(this)">Serveis</span>
+    <span class="menu-item" onclick="moveIndicator(this)">Contacte</span>
+    <!-- Indicador -->
+    <div class="nav-indicator"></div>
+  </div>
+</nav>
 
 
 <section class="header-section">
@@ -511,20 +524,7 @@ nav {
     <img src="resources/runner.png" alt="Runner" class="header-image">
   </div>
 </section>
-<nav>
-  <div class="logo">
-    <img src="logo.png" alt="Logo">
-  </div>
 
-  <div class="menu">
-    <span class="menu-item active" onclick="moveIndicator(this)">Inici</span>
-    <span class="menu-item" onclick="moveIndicator(this)">Qui som</span>
-    <span class="menu-item" onclick="moveIndicator(this)">Serveis</span>
-    <span class="menu-item" onclick="moveIndicator(this)">Contacte</span>
-    <!-- Indicador -->
-    <div class="nav-indicator"></div>
-  </div>
-</nav>
 
   <section id="qui-som" class="qui-som-section">
   <div class="qui-som-container">
@@ -711,10 +711,30 @@ nav {
   }
 </script>
 <script>
-  function toggleMenu() {
-    document.querySelector('.menu').classList.toggle('active');
+  function moveIndicator(element) {
+    const indicator = document.querySelector('.nav-indicator');
+    const menu = document.querySelector('.menu');
+    
+    // Obté la posició de l'element clicat
+    const offsetLeft = element.offsetLeft;
+    const width = element.offsetWidth;
+
+    // Aplica el moviment a l’indicador
+    indicator.style.width = `${width}px`;
+    indicator.style.left = `${offsetLeft}px`;
+
+    // Marca l’element actiu
+    document.querySelectorAll('.menu-item').forEach(item => item.classList.remove('active'));
+    element.classList.add('active');
   }
+
+  // Moure l’indicador al primer element per defecte
+  document.addEventListener("DOMContentLoaded", function () {
+    const activeElement = document.querySelector(".menu-item.active");
+    if (activeElement) moveIndicator(activeElement);
+  });
 </script>
+
 
 </body>
 </html>
