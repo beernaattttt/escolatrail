@@ -28,54 +28,69 @@
       color: var(--text-color);
       line-height: 1.6;
     }
+/* Estils generals del menú */
+nav {
+  background-color: var(--dark-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    nav {
-      background-color: var(--dark-blue);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+/* Amaguem el botó del menú en pantalles grans */
+.burger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+}
 
-    nav .logo img {
-      height: 70px;
-      transition: transform 0.3s ease-in-out;
-    }
+/* Menú normal en pantalles grans */
+.menu {
+  display: flex;
+  gap: 2rem;
+}
 
-    nav .logo img:hover {
-      transform: scale(1.1);
-    }
+/* Enllaços del menú */
+.menu a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  position: relative;
+}
 
-    nav .menu {
-      display: flex;
-      gap: 2rem;
-    }
+/* RESPONSIVITAT: Canvi a menú hamburguesa */
+@media (max-width: 768px) {
+  /* Mostrem el botó del menú en pantalles petites */
+  .burger-menu {
+    display: block;
+  }
 
-    nav .menu a {
-      text-decoration: none;
-      color: var(--white);
-      font-weight: 600;
-      transition: color 0.3s ease;
-      position: relative;
-    }
+  /* Amaguem el menú per defecte */
+  .menu {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background: var(--dark-blue);
+    position: absolute;
+    top: 60px;
+    right: 5%;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+  }
 
-    nav .menu a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 0;
-      height: 3px;
-      background-color: var(--accent);
-      transition: width 0.3s ease;
-    }
-
-    nav .menu a:hover::after {
-      width: 100%;
-    }
+  /* Quan el menú està actiu */
+  .menu.active {
+    display: flex;
+  }
+}
 
 .header-section {
   background: #002855;
@@ -497,17 +512,24 @@
   </style>
 </head>
 <body>
-  <nav>
-    <div class="logo">
-      <img src="resources/main_logo.png" alt="Escola Trail Logo">
-    </div>
-    <div class="menu">
-      <a href="#inici">Inici</a>
-      <a href="#qui-som">Qui som</a>
-      <a href="#serveis">Serveis</a>
-      <a href="#contacte">Contacte</a>
-    </div>
-  </nav>
+ <nav>
+  <div class="logo">
+    <img src="logo.png" alt="Logo">
+  </div>
+  
+  <!-- Botó del menú hamburguesa -->
+  <button class="burger-menu" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <div class="menu">
+    <a href="#">Inici</a>
+    <a href="#">Qui som</a>
+    <a href="#">Serveis</a>
+    <a href="#">Contacte</a>
+  </div>
+</nav>
+
 <section class="header-section">
   <div class="header-text">
     <h1>CORRE. VIU. GAUDEIX.</h1>
