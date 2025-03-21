@@ -351,7 +351,7 @@
   align-items: center;
   justify-content: center;
   gap: 30px;
-  max-width: 800px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -372,25 +372,22 @@
 }
 
 .arrow-btn {
-  background-color: var(--accent);
-  color: #001f3f;
+  background: transparent;
   border: none;
-  padding: 10px 18px;
-  font-size: 1.5rem;
-  border-radius: 50%;
   cursor: pointer;
-  transition: background 0.2s ease;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.arrow-btn img {
+  width: 40px;
+  height: 40px;
 }
 
 .arrow-btn:hover {
-  background-color: #ffd700;
+  transform: scale(1.1);
 }
-  .contacte-section {
-    background: linear-gradient(135deg, #f4f6f9, #e6f5ff);
-    color: #001f3f;
-    padding: 120px 10% 100px;
-    text-align: center;
-  }
+
 .icona-correu-wrapper {
   position: fixed;
   bottom: 20px;
@@ -606,23 +603,27 @@
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-</section>
-  <section id="testimonis" class="testimonis-section">
+<section id="testimonis" class="testimonis-section">
   <div class="testimonis-container">
     <h2>Què en diuen?</h2>
 
     <div class="testimoni-wrapper">
-      <button class="arrow-btn left" onclick="canviaTestimoni(-1)">←</button>
+      <button class="arrow-btn left" onclick="canviaTestimoni(-1)">
+        <img src="resources/icons/arrow-left.png" alt="Anterior">
+      </button>
 
       <div class="testimoni-card" id="testimoniActiu">
         <p>"L'Escola Trail ha canviat la manera com entén l'esport el meu fill. Ara surt a córrer amb il·lusió i responsabilitat."</p>
         <h4>— Marta, mare d'en Pol (11 anys)</h4>
       </div>
 
-      <button class="arrow-btn right" onclick="canviaTestimoni(1)">→</button>
+      <button class="arrow-btn right" onclick="canviaTestimoni(1)">
+        <img src="resources/icons/arrow-right.png" alt="Següent">
+      </button>
     </div>
   </div>
 </section>
+
 <div class="icona-correu-wrapper" id="icona-correu-wrapper">
   <a href="mailto:info@escolatrail.com" class="icona-correu" title="Envia'ns un correu">
     <img src="resources/icons/charla.png" alt="Icona de correu">
