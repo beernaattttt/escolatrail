@@ -54,7 +54,7 @@ nav .logo img {
 }
 
 
-/* Amaguem el botó del menú en pantalles grans */
+/* Default: Hide the burger menu on large screens */
 .burger-menu {
   display: none;
   background: none;
@@ -64,29 +64,16 @@ nav .logo img {
   cursor: pointer;
 }
 
-/* Menú normal en pantalles grans */
-.menu {
-  display: flex;
-  gap: 2rem;
-}
-
-/* Enllaços del menú */
-.menu a {
-  text-decoration: none;
-  color: var(--white);
-  font-weight: 600;
-  transition: color 0.3s ease;
-  position: relative;
-}
-
-/* RESPONSIVITAT: Canvi a menú hamburguesa */
+/* Show the burger menu only on small screens */
 @media (max-width: 768px) {
-  /* Mostrem el botó del menú en pantalles petites */
   .burger-menu {
-    display: block;
+    display: block; /* Makes the button visible */
+    position: absolute;
+    top: 15px;
+    right: 20px;
   }
 
-  /* Amaguem el menú per defecte */
+  /* Hide the default horizontal menu */
   .menu {
     display: none;
     flex-direction: column;
@@ -100,7 +87,7 @@ nav .logo img {
     border-radius: 5px;
   }
 
-  /* Quan el menú està actiu */
+  /* Show the menu when active */
   .menu.active {
     display: flex;
   }
@@ -542,7 +529,24 @@ nav .logo img {
     <a href="#">Serveis</a>
     <a href="#">Contacte</a>
   </div>
+</nav><nav>
+  <div class="logo">
+    <img src="resources/main_logo.png" alt="Logo">
+  </div>
+
+  <!-- Burger menu button -->
+  <button class="burger-menu" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i> <!-- FontAwesome icon -->
+  </button>
+
+  <div class="menu">
+    <a href="#">Inici</a>
+    <a href="#">Qui som</a>
+    <a href="#">Serveis</a>
+    <a href="#">Contacte</a>
+  </div>
 </nav>
+
 
 <section class="header-section">
   <div class="header-text">
