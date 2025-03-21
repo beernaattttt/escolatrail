@@ -1,0 +1,328 @@
+<html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escola Trail Barcelona</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #001f3f;
+      --secondary: #0056b3;
+      --white: #ffffff;
+      --light-blue: #0073e6;
+      --dark-blue: #79b6c9;
+      --text-color: #f4f6f9;
+      --accent: #002855;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--primary);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    nav {
+      background-color: var(--dark-blue);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo img {
+      height: 70px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    nav .logo img:hover {
+      transform: scale(1.1);
+    }
+
+    nav .menu {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav .menu a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    nav .menu a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    nav .menu a:hover::after {
+      width: 100%;
+    }
+    /* GALLERY SECTION */
+.gallery-section {
+  background: #f4f6f9;
+  padding: 100px 10%;
+  text-align: center;
+  color: #001f3f;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gallery-container h2 {
+  font-size: 2.8rem;
+  color: #0056b3;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.gallery-container p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-card {
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.gallery-card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #0056b3;
+}
+
+.gallery-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.lightbox .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+    
+ footer {
+      background-color: var(--dark-blue);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    .footer-links {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links h3 {
+      color: #002855;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin: 5px 0;
+    }
+
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: #002855;
+    }
+  </style>
+</head>
+<body>
+     <nav>
+    <div class="logo">
+      <img src="resources/main_logo.png" alt="Escola Trail Logo">
+    </div>
+    <div class="menu">
+      <a href="#inici">Inici</a>
+      <a href="#qui-som">Qui som</a>
+      <a href="#serveis">Serveis</a>
+      <a href="#contacte">Contacte</a>
+    </div>
+  </nav>
+    <section id="gallery" class="gallery-section">
+  <div class="gallery-container">
+    <h2>Group Images 2024-2025</h2>
+    <p>Discover the official team photos from this season.</p>
+
+    <div class="gallery-grid">
+      <div class="gallery-card" onclick="openLightbox('resources/images/group1.jpg')">
+        <img src="resources/images/group1.jpg" alt="Group 1">
+        <h3>Group 1</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group2.jpg')">
+        <img src="resources/images/group2.jpg" alt="Group 2">
+        <h3>Group 2</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group3.jpg')">
+        <img src="resources/images/group3.jpg" alt="Group 3">
+        <h3>Group 3</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group4.jpg')">
+        <img src="resources/images/group4.jpg" alt="Group 4">
+        <h3>Group 4</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group5.jpg')">
+        <img src="resources/images/group5.jpg" alt="Group 5">
+        <h3>Group 5</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group6.jpg')">
+        <img src="resources/images/group6.jpg" alt="Group 6">
+        <h3>Group 6</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group7.jpg')">
+        <img src="resources/images/group7.jpg" alt="Group 7">
+        <h3>Group 7</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group8.jpg')">
+        <img src="resources/images/group8.jpg" alt="Group 8">
+        <h3>Group 8</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group9.jpg')">
+        <img src="resources/images/group9.jpg" alt="Group 9">
+        <h3>Group 9</h3>
+      </div>
+      <div class="gallery-card" onclick="openLightbox('resources/images/group10.jpg')">
+        <img src="resources/images/group10.jpg" alt="Group 10">
+        <h3>Group 10</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img">
+  </div>
+</section>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/apply">Applications</a></li>
+          <li><a href="/events">Past Events</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="#">Email</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Escola Trail Barcelona. Tots els drets reservats.</p>
+  </footer>
+<script>
+  function openLightbox(imageSrc) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = imageSrc;
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
