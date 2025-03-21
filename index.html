@@ -701,30 +701,48 @@ nav {
 </section>
 
  
-  <script>
-  const wrapper = document.getElementById('icona-correu-wrapper');
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const wrapper = document.getElementById('icona-correu-wrapper');
 
-  // Comprova si ja s'ha tancat
-  if (localStorage.getItem('correuAmagat') === 'true') {
-    wrapper.style.display = 'none';
-  }
+    if (!wrapper) {
+      console.error("⚠️ No s'ha trobat l'element #icona-correu-wrapper.");
+      return;
+    }
+
+    // Obtén la data de caducitat guardada
+    const expires = localStorage.getItem('correuAmagatExpires');
+    const now = Date.now();
+
+    // Si l'element ja està amagat i NO ha expirat, no fem res
+    if (localStorage.getItem('correuAmagat') === 'true' && expires && now < parseInt(expires)) {
+      wrapper.style.display = 'none';
+      console.log("📩 Icona correu amagada fins que expiri el temps guardat.");
+    } else {
+      // Si ja ha expirat, eliminem la informació guardada i tornem a mostrar l'element
+      localStorage.removeItem('correuAmagat');
+      localStorage.removeItem('correuAmagatExpires');
+      wrapper.style.display = 'flex';
+      console.log("📩 Icona correu visible de nou!");
+    }
+  });
 
   function tancarIconaCorreu() {
+    const wrapper = document.getElementById('icona-correu-wrapper');
+
+    if (!wrapper) return;
+
     wrapper.style.display = 'none';
+
     // Guarda la data actual + 2 dies
     const expiracio = Date.now() + 2 * 24 * 60 * 60 * 1000;
     localStorage.setItem('correuAmagat', 'true');
     localStorage.setItem('correuAmagatExpires', expiracio);
-  }
 
-  // Reinicia després de 2 dies
-  const expires = localStorage.getItem('correuAmagatExpires');
-  if (expires && Date.now() > parseInt(expires)) {
-    localStorage.removeItem('correuAmagat');
-    localStorage.removeItem('correuAmagatExpires');
-    wrapper.style.display = 'flex';
+    console.log("📩 Icona correu tancada. Es tornarà a mostrar després de 2 dies.");
   }
 </script>
+
 
 </body>
 </html>
