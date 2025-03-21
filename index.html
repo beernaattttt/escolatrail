@@ -445,10 +445,10 @@
     display: none;
   }
 }
-  /* Peu de pàgina – Footer estilitzat i adaptat */
+/* Footer estilitzat i ajustat al 100% */
 .site-footer {
-  width: 100%;
-  background: #10182F;
+  width: 100%; /* Amplada completa */
+  background: #10182F; /* Color de fons correcte */
   padding: 60px 20px;
 }
 
@@ -457,7 +457,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 3rem;
-  max-width: none;
+  max-width: 1280px; /* Això manté el contingut centrat */
   margin: 0 auto;
 }
 
@@ -490,6 +490,7 @@
   .site-footer .footer-row {
     flex-direction: column;
     gap: 2rem;
+    text-align: center;
   }
 }
 
@@ -640,41 +641,43 @@
 </div>
 <section class="site-footer">
   <div class="footer-row">
- <div class="footer-col">
-          <h4>Informació</h4>
-          <ul class="links">
-            <li><a href="#">Sobre nosaltres</a></li>
-            <li><a href="#">Compressió</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Servei</a></li>
-            <li><a href="#">Col·lecció</a></li>
-          </ul>
-        </div>
+    <div class="footer-col">
+      <h4>Informació</h4>
+      <ul class="links">
+        <li><a href="#">Sobre nosaltres</a></li>
+        <li><a href="#">Compressió</a></li>
+        <li><a href="#">Clients</a></li>
+        <li><a href="#">Servei</a></li>
+        <li><a href="#">Col·lecció</a></li>
+      </ul>
+    </div>
 
-        <div class="footer-col">
-          <h4>Explora</h4>
-          <ul class="links">
-            <li><a href="#">Dissenys gratuïts</a></li>
-            <li><a href="#">Últims dissenys</a></li>
-            <li><a href="#">Temes</a></li>
-            <li><a href="#">Dissenys populars</a></li>
-            <li><a href="#">Habilitats artístiques</a></li>
-            <li><a href="#">Noves pujades</a></li>
-          </ul>
-        </div>
+    <div class="footer-col">
+      <h4>Explora</h4>
+      <ul class="links">
+        <li><a href="#">Dissenys gratuïts</a></li>
+        <li><a href="#">Últims dissenys</a></li>
+        <li><a href="#">Temes</a></li>
+        <li><a href="#">Dissenys populars</a></li>
+        <li><a href="#">Habilitats artístiques</a></li>
+        <li><a href="#">Noves pujades</a></li>
+      </ul>
+    </div>
 
-        <div class="footer-col">
-          <h4>Legal</h4>
-          <ul class="links">
-            <li><a href="#">Acord amb el client</a></li>
-            <li><a href="#">Política de privacitat</a></li>
-            <li><a href="#">RGPD</a></li>
-            <li><a href="#">Seguretat</a></li>
-            <li><a href="#">Testimonis</a></li>
-            <li><a href="#">Kit de premsa</a></li>
-          </ul>
-        </div>  </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul class="links">
+        <li><a href="#">Acord amb el client</a></li>
+        <li><a href="#">Política de privacitat</a></li>
+        <li><a href="#">RGPD</a></li>
+        <li><a href="#">Seguretat</a></li>
+        <li><a href="#">Testimonis</a></li>
+        <li><a href="#">Kit de premsa</a></li>
+      </ul>
+    </div>
+  </div>
 </section>
+
  
   <script>
   const wrapper = document.getElementById('icona-correu-wrapper');
