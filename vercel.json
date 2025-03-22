@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/contacte", "destination": "/contacte.html", "permanent": true },
+    { "source": "/inici", "destination": "/index.html", "permanent": true },
+    { "source": "/equips/2425", "destination": "/equips_24_25.html", "permanent": true },
+    { "source": "/bereal", "destination": "/bereals.html", "permanent": true },
+    { "source": "/preus", "destination": "/pricing.html", "permanent": true },
+    { "source": "/calendari", "destination": "/calendar.html", "permanent": true }
+  ]
+}
