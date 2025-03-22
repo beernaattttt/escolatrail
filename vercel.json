@@ -1,7 +1,0 @@
-{
-  "rewrites": [
-    { "source": "/inici", "destination": "/index.html" },
-    { "source": "/bereal", "destination": "/bereals.html" },
-    { "source": "/grups/2425", "destination": "/equips_24_25.html" },
-  ]
-}
