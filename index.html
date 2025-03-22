@@ -313,8 +313,8 @@
     </footer>
     <!-- SCRIPT PER CANVIAR CORREDORS I NOTIFICACIONS -->
     <script>
-  const API_KEY = "46594dfbacc51b17b903fdd5f321fa68";
-  const TOKEN = "ATTA522c8e946ac5d01cc886adfac9dee16d1391f0150b381a9af42911dae592c51077B04A6C";
+  const API_KEY = process.env.API_KEY;
+  const TOKEN = process.env.TOKEN;
   const LIST_ID = "67de7eb455ba25d170f7e58f";
 
   async function fetchTrelloNotifications() {
