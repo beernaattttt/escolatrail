@@ -211,50 +211,63 @@
   <div class="max-w-4xl mx-auto">
     <h2 class="text-4xl font-extrabold text-primary text-center mb-12">Preguntes freqüents</h2>
 
-    <div class="space-y-4" id="faq">
-      
-      <div class="border rounded-xl overflow-hidden shadow-sm">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left text-primary font-semibold text-lg faq-toggle">
-          Quina edat han de tenir per apuntar-se?
-          <span class="text-xl transition-transform">+</span>
-        </button>
-        <div class="px-6 pb-4 hidden text-gray-700">L'escola està oberta a infants i joves de 3 a 18 anys, repartits per categories segons edat i nivell.</div>
-      </div>
+  <section class="bg-white py-16 px-6 md:px-16">
+  <h2 class="text-3xl md:text-4xl font-bold text-center text-blue-800 mb-10">Preguntes freqüents</h2>
 
-      <div class="border rounded-xl overflow-hidden shadow-sm">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left text-primary font-semibold text-lg faq-toggle">
-          És obligatori competir?
-          <span class="text-xl transition-transform">+</span>
-        </button>
-        <div class="px-6 pb-4 hidden text-gray-700">No, les competicions són opcionals i es plantegen com un complement d’aprenentatge, mai com a obligació.</div>
+  <div class="space-y-4 max-w-3xl mx-auto" id="faq">
+    <!-- FAQ item -->
+    <div class="border rounded-xl overflow-hidden shadow-sm">
+      <button class="w-full flex justify-between items-center px-6 py-4 text-left text-blue-800 font-semibold text-lg faq-toggle">
+        Quina edat han de tenir per apuntar-se?
+        <span class="icon text-xl transform transition-transform duration-300">+</span>
+      </button>
+      <div class="faq-content px-6 pb-4 hidden text-gray-700">
+        L'escola està oberta a infants i joves de 3 a 18 anys, repartits per categories segons edat i nivell.
       </div>
+    </div>
 
-      <div class="border rounded-xl overflow-hidden shadow-sm">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left text-primary font-semibold text-lg faq-toggle">
-          Què passa si plou o fa fred?
-          <span class="text-xl transition-transform">+</span>
-        </button>
-        <div class="px-6 pb-4 hidden text-gray-700">Entrenem al pavelló o gimnàs del col·legi Pau Vila quan el temps no acompanya.</div>
+    <div class="border rounded-xl overflow-hidden shadow-sm">
+      <button class="w-full flex justify-between items-center px-6 py-4 text-left text-blue-800 font-semibold text-lg faq-toggle">
+        És obligatori competir?
+        <span class="icon text-xl transform transition-transform duration-300">+</span>
+      </button>
+      <div class="faq-content px-6 pb-4 hidden text-gray-700">
+        No, les competicions són opcionals i es plantegen com un complement d’aprenentatge, mai com a obligació.
       </div>
+    </div>
 
-      <div class="border rounded-xl overflow-hidden shadow-sm">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left text-primary font-semibold text-lg faq-toggle">
-          Puc venir a provar abans d’inscriure’m?
-          <span class="text-xl transition-transform">+</span>
-        </button>
-        <div class="px-6 pb-4 hidden text-gray-700">Sí! Pots venir a provar una sessió o apuntar-te a les jornades de portes obertes.</div>
+    <div class="border rounded-xl overflow-hidden shadow-sm">
+      <button class="w-full flex justify-between items-center px-6 py-4 text-left text-blue-800 font-semibold text-lg faq-toggle">
+        Què passa si plou o fa fred?
+        <span class="icon text-xl transform transition-transform duration-300">+</span>
+      </button>
+      <div class="faq-content px-6 pb-4 hidden text-gray-700">
+        Entrenem al pavelló o gimnàs del col·legi Pau Vila quan el temps no acompanya.
       </div>
+    </div>
 
-      <div class="border rounded-xl overflow-hidden shadow-sm">
-        <button class="w-full flex justify-between items-center px-6 py-4 text-left text-primary font-semibold text-lg faq-toggle">
-          Què inclou la matrícula?
-          <span class="text-xl transition-transform">+</span>
-        </button>
-        <div class="px-6 pb-4 hidden text-gray-700">Inclou la llicència federativa FEEC C, una samarreta oficial i un tallavents.</div>
+    <div class="border rounded-xl overflow-hidden shadow-sm">
+      <button class="w-full flex justify-between items-center px-6 py-4 text-left text-blue-800 font-semibold text-lg faq-toggle">
+        Puc venir a provar abans d’inscriure’m?
+        <span class="icon text-xl transform transition-transform duration-300">+</span>
+      </button>
+      <div class="faq-content px-6 pb-4 hidden text-gray-700">
+        Sí! Pots venir a provar una sessió o apuntar-te a les jornades de portes obertes.
+      </div>
+    </div>
+
+    <div class="border rounded-xl overflow-hidden shadow-sm">
+      <button class="w-full flex justify-between items-center px-6 py-4 text-left text-blue-800 font-semibold text-lg faq-toggle">
+        Què inclou la matrícula?
+        <span class="icon text-xl transform transition-transform duration-300">+</span>
+      </button>
+      <div class="faq-content px-6 pb-4 hidden text-gray-700">
+        Inclou la llicència federativa FEEC C, una samarreta oficial i un tallavents.
       </div>
     </div>
   </div>
 </section>
+
 
 <section class="bg-gray-100 py-16 px-4">
   <div class="max-w-5xl mx-auto text-center">
@@ -336,8 +349,18 @@
     }
   });
 </script>
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.icon');
 
-
+      content.classList.toggle('hidden');
+      icon.textContent = content.classList.contains('hidden') ? '+' : '–';
+      icon.classList.toggle('rotate-45');
+    });
+  });
+</script>
 
   </body>
 </html>
