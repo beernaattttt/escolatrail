@@ -120,7 +120,7 @@
         </div>
         <div class="md:w-1/2 flex justify-center relative">
           <div class="relative w-full max-w-md aspect-[3/4] overflow-hidden rounded-3xl">
-            <img id="runner-image" src="runner.png" alt="Corredor Escola Trail" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700" />
+<img id="runner-image" src="runner1.png" alt="Corredor Escola Trail" class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 opacity-100" />
           </div>
         </div>
       </div>
@@ -358,21 +358,23 @@
     });
   });
 </script>
-    <script>
-  const images = ["runner.png", "runner2.png", "runner3.png"];
+<script>
+  const images = ["/resources/runner.png", "/resources/runner2.png", "/resources/runner3.png"];
   let currentIndex = 0;
   const runnerImg = document.getElementById("runner-image");
 
   setInterval(() => {
-    currentIndex = (currentIndex + 1) % images.length;
-    runnerImg.classList.add("opacity-0"); // Afegim efecte de transició
+    runnerImg.classList.add("opacity-0"); // Fes el fade out
 
     setTimeout(() => {
+      // Canvia la imatge un cop s'ha fet el fade out
+      currentIndex = (currentIndex + 1) % images.length;
       runnerImg.src = images[currentIndex];
-      runnerImg.classList.remove("opacity-0");
-    }, 300); // Coincideix amb la durada de la transició (300ms)
-  }, 3000); // Canvi cada 3 segons
+      runnerImg.classList.remove("opacity-0"); // Fes el fade in
+    }, 700); // Coincideix amb duration-700
+  }, 4000); // Canvi cada 4 segons
 </script>
+
 
 
   </body>
