@@ -137,42 +137,15 @@
 </section>
 
       
-    <footer class="bg-gray-900 text-white py-16">
-  <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
-    <div>
-      <h3 class="text-lg font-bold mb-2">Enllaços útils</h3>
-      <ul class="text-sm space-y-2 text-gray-400">
-        <li><a href="/" class="hover:text-white">Inici</a></li>
-        <li><a href="/bereals.html" class="hover:text-white">BeReal's</a></li>
-      </ul>
-    </div>
-    <div>
-      <h3 class="text-lg font-bold mb-2">Xarxes socials</h3>
-      <ul class="text-sm space-y-2 text-gray-400">
-        <li><a href="https://www.instagram.com/escolatrailbcn/" class="hover:text-white">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@escola.trail.bcn" class="hover:text-white">TikTok</a></li>
-        <li><a href="https://www.facebook.com/escolatrailbcn/" class="hover:text-white">Facebook</a></li>
-      </ul>
-    </div>
-  <div>
-  <h3 href="#contacte" class="text-lg font-bold mb-2">Contacte</h3>
-  <p class="text-sm text-gray-400 mb-4">info@escolatrail.com</p>
-  
-  <!-- Logo + enllaç a FEEC -->
-  <a href="https://www.feec.cat/fem-muntanya/infancia-joventut-i-families/comite-escoles-de-trail/" 
-     target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:opacity-90 transition">
-    <img src="/resources/segell_qualitat_feec.png" alt="Segell Escoles de Trail FEEC" class="h-16">
-    <span class="text-xs text-gray-400">Escoles de Trail – FEEC</span>
-  </a>
-</div>
-  </div>
+  <div id="footer-placeholder"></div>
 
- 
-
-  <div class="mt-6 text-center text-xs text-gray-500 px-4">
-    © 2025 All Rights Reserved - Escola Trail Barcelona · El Papiol
-  </div>
-</footer>
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
 
     <script>
   const menuToggle = document.getElementById("menu-toggle");
