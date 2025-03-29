@@ -130,6 +130,7 @@
           <li><strong>Pedro:</strong> 609 229 208</li>
           <li><strong>Tato:</strong> 685 191 064</li>
           <li><strong>Gina:</strong> 699 932 901</li>
+          <li><strong>Sergi:</strong> 608 789 323</li>
         </ul>
       </div>
 
@@ -152,32 +153,15 @@
 </section>
 
      
-    <footer class="bg-gray-900 text-white py-16">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-4">
-        <div>
-          <h3 class="text-lg font-bold mb-2">Enllaços útils</h3>
-          <ul class="text-sm space-y-2 text-gray-400">
-            <li><a href="/" class="hover:text-white">Inici</a></li>
-            <li><a href="/bereals.html" class="hover:text-white">BeReal's</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-bold mb-2">Xarxes socials</h3>
-          <ul class="text-sm space-y-2 text-gray-400">
-            <li><a href="https://www.instagram.com/escolatrailbcn/" class="hover:text-white">Instagram</a></li>
-            <li><a href="https://www.tiktok.com/@escola.trail.bcn" class="hover:text-white">TikTok</a></li>
-            <li><a href="https://www.facebook.com/escolatrailbcn/" class="hover:text-white">Facebook</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 href="#contacte" class="text-lg font-bold mb-2">Contacte</h3>
-          <p class="text-sm text-gray-400">info@escolatrail.com</p>
-        </div>
-      </div>
-      <div class="mt-10 text-center text-xs text-gray-500 px-4">
-        © 2025 All Rights Reserved - Escola Trail Barcelona · El Papiol
-      </div>
-    </footer>
+   <div id="footer-placeholder"></div>
+
+<script>
+  fetch("/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
     <script>
   const menuToggle = document.getElementById("menu-toggle");
   const mobileMenu = document.getElementById("mobile-menu");
