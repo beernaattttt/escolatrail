@@ -278,15 +278,16 @@
   </div>
 
 <!-- Modal vídeo -->
-<div id="modal-video" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
-  <div class="relative w-[90vw] h-[90vh] animate-fadeIn">
+<div id="modal-video" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden px-4">
+  <div class="relative w-[90vw] h-[60vh] animate-fadeIn">
     <!-- Botó tancar -->
-    <button onclick="tancaVideo()" class="absolute -top-8 right-0 text-white text-4xl font-bold hover:text-red-400 transition">&times;</button>
-    
+    <button onclick="tancaVideo()" class="absolute -top-10 right-0 text-white text-4xl font-bold hover:text-red-400 transition z-10">&times;</button>
+
     <!-- Vídeo -->
     <iframe id="iframe-video" class="w-full h-full rounded-lg" src="" frameborder="0" allowfullscreen allow="autoplay"></iframe>
   </div>
 </div>
+
 
 </section>
 
