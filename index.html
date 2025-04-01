@@ -236,16 +236,7 @@
   </div>
 </section>
 
-    <!-- Ona superior -->
-<div class="relative">
-  <div class="absolute inset-0 -top-1 z-0">
-    <svg class="h-24 w-full md:h-32" viewBox="0 0 1440 320" preserveAspectRatio="none" fill="#1e3a8a">
-      <path fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,90.7C384,85,480,107,576,128C672,149,768,171,864,160C960,149,1056,107,1152,112C1248,117,1344,171,1392,197.3L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-    </svg>
-  </div>
-</div>
-
-<!-- Secció vídeos -->
+  <!-- Secció vídeos -->
 <section class="relative z-10 bg-white px-6 py-16 md:px-16">
   <h2 class="mb-12 text-center text-4xl font-extrabold text-blue-800 md:text-5xl">Els nostres vídeos</h2>
 <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -288,14 +279,12 @@
 
 <!-- Modal vídeo -->
 <div id="modal-video" class="fixed inset-0 bg-black/90 flex items-center justify-center z-50 hidden">
-  <div class="relative w-full h-full px-4 animate-fadeIn flex items-center justify-center">
+  <div class="relative w-[90vw] h-[90vh] animate-fadeIn">
     <!-- Botó tancar -->
-    <button onclick="tancaVideo()" class="absolute top-4 right-4 text-white text-4xl font-bold hover:text-red-400 transition">&times;</button>
+    <button onclick="tancaVideo()" class="absolute -top-8 right-0 text-white text-4xl font-bold hover:text-red-400 transition">&times;</button>
     
     <!-- Vídeo -->
-    <div class="w-full h-full max-w-screen max-h-screen">
-      <iframe id="iframe-video" class="w-full h-full rounded-lg" src="" frameborder="0" allowfullscreen allow="autoplay"></iframe>
-    </div>
+    <iframe id="iframe-video" class="w-full h-full rounded-lg" src="" frameborder="0" allowfullscreen allow="autoplay"></iframe>
   </div>
 </div>
 
