@@ -407,7 +407,7 @@ L'escola està oberta a infants (a partir de 4 anys), joves i adults, repartits 
   <div id="footer-placeholder"></div>
 
 <!-- Cookie Banner -->
-<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-8 md:right-auto max-w-md bg-white text-gray-800 p-4 rounded-xl shadow-lg border border-gray-200 flex items-start gap-3 z-50 animate-fadeIn">
+<div id="cookie-banner" class="fixed bottom-4 left-4 right-4 md:left-8 md:right-auto max-w-md bg-white text-gray-800 p-4 rounded-xl shadow-xl border border-gray-200 flex items-start gap-3 z-50 hidden animate-slideUp">
   <div class="text-2xl">🍪</div>
   <div class="flex-1 text-sm">
     Utilitzem cookies per oferir-te una millor experiència.
@@ -420,29 +420,38 @@ L'escola està oberta a infants (a partir de 4 anys), joves i adults, repartits 
 <!-- JavaScript -->
 <script>
   function acceptaCookies() {
-    localStorage.setItem("cookiesAcceptades", "true");
+    const unaSetmana = 1000 * 60 * 60 * 24 * 7; // 1 setmana en mil·lisegons
+    const expiracio = Date.now() + unaSetmana;
+    localStorage.setItem("cookiesAcceptades", expiracio);
     document.getElementById("cookie-banner").classList.add("hidden");
   }
 
   window.addEventListener("DOMContentLoaded", () => {
-    if (localStorage.getItem("cookiesAcceptades") === "true") {
-      document.getElementById("cookie-banner").classList.add("hidden");
+    const expiracio = localStorage.getItem("cookiesAcceptades");
+    if (!expiracio || Date.now() > parseInt(expiracio)) {
+      document.getElementById("cookie-banner").classList.remove("hidden");
     }
   });
 </script>
 
-<!-- Petita animació (Tailwind) -->
+<!-- Animació Tailwind Personalitzada -->
 <style>
-  .animate-fadeIn {
-    animation: fadeIn 0.5s ease-out;
+  .animate-slideUp {
+    animation: slideUp 0.5s ease-out;
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
-``
+
     
     
 <script>
