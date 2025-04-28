@@ -43,27 +43,26 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   </head>
-<section id="emergency-banner" class="bg-red-500 text-white text-center p-4 md:p-5 relative shadow-md">
-  <div class="flex flex-col md:flex-row items-center justify-center gap-3">
-    <span class="text-2xl md:text-3xl font-semibold">⚡ Alerta important</span>
-    <span class="text-base md:text-lg font-medium">Risc de talls de llum i internet a la península.</span>
+<section id="emergency-banner" class="bg-red-600 text-white p-3 md:p-4 text-center relative">
+  <div class="flex flex-col md:flex-row items-center justify-center gap-2">
+    <span class="text-base md:text-lg font-semibold">Alerta: possibles talls de llum i internet.</span>
   </div>
-  <div class="mt-2 text-sm md:text-base">
-    Seguiu actualitzacions oficials a 
-    <a href="https://x.com/emergenciescat" target="_blank" class="underline hover:text-gray-200 transition">x.com/emergenciescat</a>.
+  <div class="mt-1 text-sm">
+    Més informació a 
+    <a href="https://x.com/emergenciescat" target="_blank" class="underline hover:text-gray-300 transition">x.com/emergenciescat</a>
   </div>
-  <button id="close-banner" class="absolute top-3 right-4 text-white text-2xl hover:text-gray-300 transition" aria-label="Tancar">
+  <button id="close-banner" class="absolute top-2 right-3 text-white text-xl hover:text-gray-300 transition" aria-label="Tancar alerta">
     ✕
   </button>
 </section>
 
 <script>
-// Funció per tancar manualment
+// Tancar manualment
 document.getElementById('close-banner').addEventListener('click', function() {
   document.getElementById('emergency-banner').classList.add('hidden');
 });
 
-// Ocultar automàticament passat el 29 d'abril a les 20:00
+// Ocultar automàticament passat el 29/04/2025 a les 20:00
 const now = new Date();
 const hideDate = new Date('2025-04-29T20:00:00');
 
@@ -71,6 +70,7 @@ if (now > hideDate) {
   document.getElementById('emergency-banner').classList.add('hidden');
 }
 </script>
+
 
 
   <body class="bg-white text-gray-800 font-display">
