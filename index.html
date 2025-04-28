@@ -43,6 +43,28 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   </head>
+  <section id="emergency-banner" class="bg-yellow-400 text-black font-bold text-center p-4 relative">
+  🚨 Alerta: risc imminent de talls de llum i internet a la península. 
+  Protegiu dispositius i seguiu actualitzacions a 
+  <a href="https://x.com/emergenciescat" target="_blank" class="underline">x.com/emergenciescat</a>.
+  <button id="close-banner" class="absolute top-2 right-4 text-2xl leading-none hover:text-red-600">✖</button>
+</section>
+
+<script>
+// Funció per tancar manualment
+document.getElementById('close-banner').addEventListener('click', function() {
+  document.getElementById('emergency-banner').classList.add('hidden');
+});
+
+// Amagar automàticament passat el 29 d'abril a les 20:00
+const now = new Date();
+const hideDate = new Date('2025-04-29T20:00:00');
+
+if (now > hideDate) {
+  document.getElementById('emergency-banner').classList.add('hidden');
+}
+</script>
+
   <body class="bg-white text-gray-800 font-display">
 
 
